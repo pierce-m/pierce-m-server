@@ -8,7 +8,7 @@ import (
 )
 
 func ring_handler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "http://pierce-m.github.io")
 	ioutil.WriteFile("infile", []byte(r.FormValue("program")), 0644)
 	resp, err := exec.Command("ring", "infile").Output()
 	if err != nil {
